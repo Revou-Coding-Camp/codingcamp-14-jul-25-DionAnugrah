@@ -4,19 +4,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.nav-links');
+const navOverlay = document.querySelector('.nav-overlay');
+const navLinksItems = document.querySelectorAll('.nav-links li');
 
-burger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  burger.classList.toggle('toggle');
-});
+burger.addEventListener('click', toggleMenu);
+navOverlay.addEventListener('click', toggleMenu);
 
-// Tutup menu saat klik link
+// Close menu when clicking links
 document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-    burger.classList.remove('toggle');
-  });
+    link.addEventListener('click', toggleMenu);
 });
+navOverlay.addEventListener('click', () => {
+    toggleMenu();
+});
+
+// Animation keyframes
+const style = document.createElement('style');
+style.innerHTML = `
+    @keyframes navItemFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// Tutup menu saat link diklik
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', toggleMenu);
+});
+// Fungsi toggle menu
+function toggleMenu() {
+    // Toggle menu
+    navLinks.classList.toggle('active');
+    navOverlay.classList.toggle('active');
+    burger.classList.toggle('toggle');
+    
+    // Toggle body scroll
+    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    
+    // Animate links
+    if (navLinks.classList.contains('active')) {
+        navItems.forEach((item, index) => {
+            item.style.animation = `navItemFade 0.5s ease forwards ${index * 0.1 + 0.3}s`;
+        });
+    } else {
+        navItems.forEach(item => {
+            item.style.animation = '';
+        });
+    }
+}
     // Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -65,21 +107,33 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         }
     });
     
-    // Add animation to elements when they come into view
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.hero-content, .about-content, .projects-container, .contact-container');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
-            
-            if (elementPosition < screenPosition) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
+// Add animation to elements when they come into view
+const animateOnScroll = function() {
+    const elements = document.querySelectorAll('.hero-content, .about-content, .projects-container, .contact-container, .project-card, .skill-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
             }
         });
-    };
-    
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+        observer.observe(el);
+    });
+};
+
+// Panggil fungsi saat load
+window.addEventListener('DOMContentLoaded', animateOnScroll);    
     // Set initial state for animation
     document.querySelectorAll('.hero-content, .about-content, .projects-container, .contact-container').forEach(el => {
         el.style.opacity = '0';

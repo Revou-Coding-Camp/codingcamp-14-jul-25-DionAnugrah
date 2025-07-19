@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">PORTFOLIO</div>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-overlay"></div> <!-- Tambahkan overlay -->
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span>Dion Anugrah</span></h1>
+            <p class="subtitle">Informatics Engineering student at Tadulako University</p>
+            <div class="social-icons">
+                <a href="https://github.com/DionAnugrah" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/dion-anugrah-56a3bb343" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/dhionnugrahh" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+            <a href="#contact" class="btn btn-primary">Contact Me</a>
+        </div>
+        <div class="hero-image">
+            <div class="image-wrapper">
+                <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg" alt="Profile Image">
+                <div class="image-border"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="img/img1.jpg" alt="Project 1">
+                        <div class="project-overlay">
+                            <a href="https://www.figma.com/design/KR8M9XR8VfaqsJ7cwCD4wk/AgriSmart?node-id=0-1&t=WAEvUuItuyID0UAK-1" class="btn-small btn-primary">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>AgriSmart</h3>
+                        <p>A fully responsive e-commerce platform built with React and Node.js</p>
+                        <div class="project-tags">
+                            <span>UI/UX</span>
+                            <span>Figma</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="img/img2.png" alt="Project 1">
+                        <div class="project-overlay">
+                            <a href="" class="btn-small btn-primary">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>TransPalu</h3>
+                        <p>A clean and modern portfolio template for creatives</p>
+                        <div class="project-tags">
+                            <span>UI/UX</span>
+                            <span>Figma</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="img/me.png" alt="About Image">
+                        <div class="image-border"></div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>Hi, I'm Dion Anugrah, an Informatics Engineering student at Tadulako University. I have an interest in UI/UX and continue to develop my skills in the field. My design philosophy focuses on a minimalist and modern approach, with the aim of creating an aesthetic and comfortable appearance.</p>
+                    <p>Currently, I am a 2nd semester student who is still in the learning process. Therefore, I am very open to suggestions and input to improve my skills and understanding in this field.</p>
+                    <p>Designing is one of my hobbies, which I often do when I have the urge or inspiration. Currently, I spend more time reading books and learning new things that can increase my insight and skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>dion.anugrah@untad.ac.id</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+62 851-7443-7033</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Palu City, Central Sulawesi, Indonesia</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://github.com/DionAnugrah" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/dion-anugrah-56a3bb343" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/dhionnugrahh" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Dion Anugrah. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/script.js"></script>
+
+</body>
+</html>

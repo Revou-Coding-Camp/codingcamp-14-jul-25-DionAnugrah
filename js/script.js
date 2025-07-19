@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.nav-links');
 const navOverlay = document.querySelector('.nav-overlay');
-const navLinksItems = document.querySelectorAll('.nav-links li');
+const navItems = document.querySelectorAll('.nav-links li');
 
 burger.addEventListener('click', toggleMenu);
 navOverlay.addEventListener('click', toggleMenu);

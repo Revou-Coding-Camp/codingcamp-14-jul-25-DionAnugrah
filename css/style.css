@@ -42,12 +42,12 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--text-color);
     transition: var(--transition);
 }
 
 a:hover {
-    color: var(--accent-color);
+    color: var(--primary-color);
 }
 
 h1, h2, h3, h4 {
@@ -752,6 +752,7 @@ footer {
     }
     
     .hero-image {
+        height: 10rem;
         margin-top: 2rem;
     }
     
